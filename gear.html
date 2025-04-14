@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="David Ross is a Melbourne based Production Sound Mixer with over 10 years experience working on film, TV and Comerical prjects.">
+  <title>David Ross::Audio/kit-list</title>
+  <link rel="icon" href="/images/png/DavidRossLogo.png">
+  <link rel="stylesheet" href="themes/css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="nav-icon">
+        <div class="tape-machine">
+          <a href="index.html">
+            <img src="images/svg/R2R_body.svg" alt="reel to reel body" class="tape-body" />
+            <img src="images/svg/R2R_reel.svg" alt="left reel" class="tape-reel reel-left" />
+            <img src="images/svg/R2R_reel.svg" alt="right reel" class="tape-reel reel-right" />
+          </a>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a class="hgreen" href="/index.html" id="wiggle">/home</a>
+        <a class="horange" style="color: #f6915f;">/kit list</a>
+        <a class="hred" href="/contact.html" id="wiggle">/contact</a>
+      </div>
+    </div>
+
+    <div class="gear-content">
+      <section class="content-box-l">
+        <div class="slider-wrapper">
+          <div class="slider" id="slider">
+            <img class="gear-image" id="slide-1" src="images/jpeg/gear/crown-show.JPG" alt="">
+            <img class="gear-image" id="slide-2" src="/images/jpeg/gear/friends-on-beach.JPG" alt="">
+            <img class="gear-image" id="slide-3" src="/images/jpeg/gear/mixpre-nexus.JPG" alt="">
+            <img class="gear-image" id="slide-4" src="/images/jpeg/gear/833.JPG" alt="">
+            <img class="gear-image" id="slide-5" src="/images/jpeg/gear/van_out_and_about.JPG" alt="">
+            <img class="gear-image" id="slide-6" src="/images/jpeg/gear/van_at_night.JPG" alt="">
+          </div>
+          <div class="slider-nav">
+            <a data-slide="0"></a>
+            <a data-slide="1"></a>
+            <a data-slide="2"></a>
+            <a data-slide="3"></a>
+            <a data-slide="4"></a>
+            <a data-slide="5"></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="content-box-l">
+        <div id="tc-blue" class="title"> <span id="t-color-red">Gear</span> <span id="t-color-org">:: a</span> <span
+            id="t-color-ylw">non-exhaustive</span> <span id="t-color-grn">list;</span>
+        </div>
+        <p>
+          For Documentary and factual content I have a small and portable bag setup and for TVC and drama I have a full
+          production
+          sound cart setup.
+        </p>
+
+
+        <div class="hbrown">
+          <br>
+          <strong id="t-color-red">
+            Recorders/Mixers
+          </strong>
+        </div>
+        <div class="gear-section">
+
+
+          Sound Devices 833 12 Track Mixer/Recorder
+          <br />
+          Sound Devices Mix Pre 10T - 10 channel recorder
+          <br />
+          Sound Devices CL-12 - 12 channel control surface.
+
+        </div>
+        <br>
+
+
+        <div class="hbrown">
+          <strong id="t-color-grn">
+            Wireless:
+          </strong>
+        </div>
+        <div class="gear-section">
+
+
+          10 channels of <span> <strong><a class="hblue" href="https://www.sounddevices.com/astral/"> Sound Devices
+                Astral</a></strong> </span> wireless
+          available
+          including...
+
+          <br />
+          Sound Devices A20 Nexus - 8 - 16 channel Receiver
+          <br />
+          3 x Audio Ltd. A10 Receivers
+          <br />
+          <br />
+          2 x Sound Devices A20 transmitters with timecode, internal recording and Phantom Power
+          <br />
+          4 x Sound Devices A20 mini with timecode and internal recording
+          <br />
+          4 x Audio ltd A10 transmitters with timecode and internal recording
+          <br />
+
+
+          <br>
+
+        </div>
+
+        <div class="hbrown">
+          <strong id="t-color-ylw">
+            Microphones
+          </strong>
+        </div>
+
+        <div class="gear-section">
+
+          Sanken Cs3e shotgun for exterior location
+          <br />
+          DPA 2017 shotgun microphone
+          <br />
+          2 x Sennheiser 8050 hypercardiod mics for indoor recording
+          <br />
+          2 x Rode Nt-5 pencil mics for stereo Atmos recording Rode NtG 3 Shotgun
+          <br />
+          6 x DPA 4060's
+          <br>
+          4 x DPA 6060's
+          <br>
+          3 x Shure SM7B Podcast mic's
+          <br>
+          1 x custom 'Neuman U87' clone large diaphram condensor
+
+        </div>
+
+
+        <br>
+        <div class="hbrown">
+          <strong id="tc-brown">
+            Coms/IFB
+          </Strong>
+        </div>
+
+        <div class="gear-section">
+
+          10 IFB receivers for client monitoring
+          <br />
+          2 x sennheiser G3 kits for camera/ IFB feeds
+          <br />
+          Large battery operated playback speaker
+          <br />
+
+
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.getElementById('slider');
+        const navLinks = document.querySelectorAll('.slider-nav a');
+        const slides = document.querySelectorAll('.slider .gear-image');
+
+        // Set the first slide as active by default
+        slides[0].classList.add('active');
+        navLinks[0].classList.add('active');
+
+        // Function to update active slide
+        function setActiveSlide(index) {
+          // Remove active class from all slides and nav dots
+          slides.forEach(slide => slide.classList.remove('active'));
+          navLinks.forEach(link => link.classList.remove('active'));
+
+          // Add active class to current slide and nav dot
+          slides[index].classList.add('active');
+          navLinks[index].classList.add('active');
+        }
+
+        // Handle click on nav dots
+        navLinks.forEach(link => {
+          link.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default anchor behavior
+
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            const slideWidth = slider.clientWidth;
+
+            // Scroll to the selected slide
+            slider.scrollTo({
+              left: slideWidth * slideIndex,
+              behavior: 'smooth'
+            });
+
+            // Update active classes
+            setActiveSlide(slideIndex);
+          });
+        });
+
+        // Handle scroll events to update active slide based on scroll position
+        slider.addEventListener('scroll', function () {
+          const scrollPosition = slider.scrollLeft;
+          const slideWidth = slider.clientWidth;
+
+          // Calculate which slide is most visible
+          const activeIndex = Math.round(scrollPosition / slideWidth);
+
+          // Update active classes
+          setActiveSlide(activeIndex);
+        });
+      });
+    </script>
+
+
+    <!-- FOOTER SECTION -->
+    <footer class=" footer">
+      <div>
+        <span class="h3">This website was created by David Ross - &copy 2025 <span> ---------- </span>
+          <span>
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank"
+              rel="license noopener noreferrer"> <span class="h3"> CC BY-SA 4.0
+
+                <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="" width="20px">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="" width="20px">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="" width="20px">
+
+              </span>
+            </a>
+          </span>
+
+        </span>
+      </div>
+
+
+
+    </footer>
+</body>
