@@ -1,6 +1,7 @@
 /* variables for resuse */
 :root {
   --background-color: #222222;
+  --background-color-darker: #1a1a1a;
   --bg-color-light: #a7a7a7;
   --text-colour-dark: rgba(255, 249, 234, 0.971);
   --text-colour-grey: rgba(255, 249, 234, 0.473);
@@ -18,6 +19,18 @@
   font-family: "Inclusive Sans", sans-serif;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 body {
   color: var(--text-colour-dark);
   background-color: var(--background-color);
@@ -31,6 +44,12 @@ body {
   color: var(--text-colour-dark);
 }
 
+iframe {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
 .home-content {
   display: flex;
   flex-direction: row;
@@ -38,9 +57,31 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 18px;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
   gap: 1em;
   flex: 1;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 480px; /* smaller than the default 560px */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .hidden-text {
@@ -70,9 +111,6 @@ body {
   min-width: 250px;
 }
 
-.copyright-disclaimer {
-}
-
 .h2 {
   margin: 20px 5px 10px 0px;
   font-size: 1.2em;
@@ -98,9 +136,7 @@ button {
   border-radius: 10px;
   border: 1px solid var(--text-colour-dark);
   font-size: 18px;
-
   width: 130px;
-
   height: 50px;
   margin: 10px;
   background-color: #265555;
@@ -125,6 +161,7 @@ form {
 
 input {
   border: 1px solid var(--text-colour-dark);
+  background-color: var(--background-color-darker);
   border-radius: 4px;
   display: inline-block;
   margin: 10px 0px 10px 0px;
@@ -136,11 +173,14 @@ input {
 }
 textarea {
   border: 1px solid var(--text-colour-dark);
+  background-color: var(--background-color-darker);
   border-radius: 10px;
   margin: 10px 0px 10px 0px;
   padding: 12px 20px;
   height: 200px;
   width: 100%;
+  max-width: 100%;
+  min-width: 100%;
   box-shadow: var(--box-shadow);
 }
 
@@ -562,6 +602,12 @@ a:link {
     left: 95px;
   }
 
+  button {
+    width: 110px;
+    height: 50px;
+    margin: 10px;
+  }
+
   .home-content {
     flex-direction: column;
     align-items: center;
@@ -595,13 +641,10 @@ a:link {
 
   input {
     border: 1px solid var(--text-colour-dark);
-
     margin: 10px 0px 10px 0px;
     padding: 12px 20px;
     width: 100%;
     height: 40px;
-    font-size: 18px;
-    box-shadow: var(--box-shadow);
   }
   textarea {
     border: 1px solid var(--text-colour-dark);
@@ -610,7 +653,6 @@ a:link {
     padding: 12px 20px;
     height: 150px;
     width: 100%;
-    box-shadow: var(--box-shadow);
   }
 }
 

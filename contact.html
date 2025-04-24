@@ -29,25 +29,28 @@
       </div>
    
     </div>
-
+  
     <div class="home-content">
+      <meta name="description"
+        content="Contact David Ross for professional audio engineering, mixing, and recording services.">
 
-    <form id="contact_form" action="https://api.web3forms.com/submit" method="POST">
+
+    <form aria-labelledby="contactHeading" role="form"  id="contact_form" action="https://api.web3forms.com/submit" method="POST">
+      <h2 id="contactHeading" class="visually-hidden">Contact Form</h2>
       <input type="hidden" name="access_key" value="ceef7160-379a-449f-9c3b-775d11326ff4">
 
-      <label class="label" for="first-name">First name:</label>
+        <label for="fname" required minlength="2" maxlength="50">First name:</label>
+        <input type="text" id="fname" name="fname" autocomplete="given-name" required>
 
-      <input type="text" id="fname" name="fname" autocomplete="given-name">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" autocomplete="family-name" required>
 
-      <label class="label" for="last-name">Last name:</label><br>
-      <input type="text" id="lname" name="lname" autocomplete="family-name">
-      <label class="label" for="email">Email:</label><br>
-      <input type="text" id="email" name="email" autocomplete="email">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
 
-      <label class="label" for="message">Message:</label>
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="5" required></textarea>
       <br>
-
-      <textarea name="message" id="message"></textarea>
 
       <div>
       <button class="button" type="submit">submit  </button>
@@ -60,19 +63,32 @@
 
     </div>
 
-
-
     <div>
       <br>
       <span>
 
       </span>
     </div>
+
+
+        <!-- FOOTER SECTION -->
+        <footer class=" footer">
+          <div>
+            <span class="h3">This website was created by David Ross - &copy 2025 <span> ---------- </span>
+              <span>
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank"
+                  rel="license noopener noreferrer"> <span class="h3"> CC BY-SA 4.0
+        
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="" width="20px">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="" width="20px">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt="" width="20px">
+        
+                  </span>
+                </a>
+              </span>
+        
+            </span>
+          </div>
+        </footer>
     </body>
-
-
-
-
-
-<!-- CSS -->
 
