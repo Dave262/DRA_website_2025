@@ -322,7 +322,7 @@ textarea {
   width: 200%;
   /* or larger */
   height: 100%;
-  background: url("/images/svg/stars.svg") repeat-x;
+  background: url("../../images/svg/stars.svg") repeat-x;
   animation: stars-slide 30s linear infinite;
 }
 
