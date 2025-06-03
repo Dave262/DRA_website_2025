@@ -169,7 +169,7 @@ input {
   width: 100%;
   height: 50px;
   font-size: 18px;
-  color: var(--text-colou-dark);
+  color: var(--text-colour-dark);
   box-shadow: var(--box-shadow);
 }
 textarea {
@@ -182,7 +182,7 @@ textarea {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-  color: var(--text-colou-dark);
+  color: var(--text-colour-dark);
   box-shadow: var(--box-shadow);
 }
 
