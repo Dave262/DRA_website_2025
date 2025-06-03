@@ -1,0 +1,18 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<html>
+  <head>
+    <!-- ... -->
+    <meta charset="utf-8" /> // no longer added by default
+  </head>
+  <!-- ... -->
+  <h1>{frontmatter.title}</h1>
+  <h2>Post author: {frontmatter.author}</h2>
+  <p>{frontmatter.description}</p>
+  <slot />
+  <!-- Markdown content is injected here -->
+  <!-- ... -->
+
+</html>

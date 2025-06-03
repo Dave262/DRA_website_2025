@@ -1,0 +1,275 @@
+---
+// import "./style.css";
+
+import Header from "./header.astro";
+import Footer from "./footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <link rel="stylesheet" href="style.css" />
+  <Header />
+
+  <body>
+    <div class="wrap">
+      <div class="nav">
+        <div class="nav-icon">
+          <div class="tape-machine">
+            <a href="index.html">
+              <span class="visually-hidden"
+                >Reel-to-reel tape machine logo linking to home</span
+              >
+              <img
+                src="/images/svg/R2R_body.svg"
+                alt="reel to reel body"
+                class="tape-body"
+              />
+              <img
+                src="/images/svg/R2R_Reel.svg"
+                alt="left reel"
+                class="tape-reel reel-left"
+              />
+              <img
+                src="/images/svg/R2R_Reel.svg"
+                alt="right reel"
+                class="tape-reel reel-right"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a class="hgreen" href="./index.html" id="wiggle">/home</a>
+          <a class="horange" style="color: #f6915f;">/kit list</a>
+          <a class="hred" href="./contact.html" id="wiggle">/contact</a>
+          <a class="hblue" href="./blog.html" id="wiggle">/blog</a>
+        </div>
+      </div>
+
+      <div class="gear-content">
+        <section class="content-box-l">
+          <div class="slider-wrapper">
+            <div class="slider" id="slider">
+              <img
+                class="gear-image"
+                id="slide-1"
+                src="/images/jpeg/gear/crown-show.JPG"
+                alt="Live audio recording setup for Celtic Illusion show at Crown Casino, Melbourne - production sound cart in action."
+              />
+              <img
+                class="gear-image"
+                id="slide-2"
+                src="/images/jpeg/gear/friends-on-beach.JPG"
+                alt="Boom Operator and Script Supervisor on set of indie film 'Strange Creatures' - location sound setup."
+              />
+              <img
+                class="gear-image"
+                id="slide-3"
+                src="/images/jpeg/gear/mixpre-nexus.JPG"
+                alt="Compact sound bag rig featuring Sound Devices Nexus wireless and MixPre 10T recorder - documentary setup."
+              />
+              <img
+                class="gear-image"
+                id="slide-4"
+                src="/images/jpeg/gear/833.JPG"
+                alt="Sound Devices 833 mixer-recorder with Nexus receiver - field recording gear for narrative production."
+              />
+              <img
+                class="gear-image"
+                id="slide-5"
+                src="/images/jpeg/gear/van_out_and_about.JPG"
+                alt="Mobile sound van for commercial shoot - professional location audio gear transport setup."
+              />
+              <img
+                class="gear-image"
+                id="slide-6"
+                src="/images/jpeg/gear/van_at_night.JPG"
+                alt="	Night-time view of sound van setup with Magliner cart - location sound workflow behind the scenes."
+              />
+            </div>
+            <div class="slider-nav">
+              <a
+                data-slide="0"
+                href="#slide-1"
+                aria-label="Slide 1: Live recording setup for Celtic Illusion show at Crown Casino, Melbourne."
+                ><span class="visually-hidden">1</span></a
+              >
+              <a
+                data-slide="1"
+                href="#slide-2"
+                aria-label="Slide 2: Boom Operator Tim and Script Supervisor Paige on the set of Strange Creatures."
+                ><span class="visually-hidden">2</span></a
+              >
+              <a
+                data-slide="2"
+                href="#slide-3"
+                aria-label="Slide 3: Small bag rig with Sound Devices Nexus and MixPre 10T."
+                ><span class="visually-hidden">3</span></a
+              >
+              <a
+                data-slide="3"
+                href="#slide-4"
+                aria-label="Slide 4: Sound Devices 833 bag rig with Nexus receiver."
+                ><span class="visually-hidden">4</span></a
+              >
+              <a
+                data-slide="4"
+                href="#slide-5"
+                aria-label="Slide 5: Sound van parked on a commercial shoot outside Melbourne."
+                ><span class="visually-hidden">5</span></a
+              >
+              <a
+                data-slide="5"
+                href="#slide-6"
+                aria-label="Slide 6: Sound van at night with a Magliner."
+                ><span class="visually-hidden">6</span></a
+              >
+            </div>
+          </div>
+          <span class="visually-hidden"></span>
+        </section>
+
+        <div class="content-box-l">
+          <div id="tc-blue" class="title">
+            <span id="t-color-red">Gear</span>
+            <span id="t-color-org">:: a</span>
+            <span id="t-color-ylw">non-exhaustive</span>
+            <span id="t-color-grn">list;</span>
+          </div>
+          <p>
+            My kit can grow or shrink depending on the needs of the job - from a
+            small, ultra portable bag rig to a full multi-cart setup for TVC and
+            narrative shoots.
+          </p>
+
+          <div class="hbrown">
+            <br />
+            <strong id="t-color-red"> Recorders/Mixers </strong>
+          </div>
+          <div class="gear-section">
+            Sound Devices 833 12 Track Mixer/Recorder
+            <br />
+            Sound Devices Mix Pre 10T - 10 channel recorder
+            <br />
+            Sound Devices CL-12 - 12 channel control surface.
+          </div>
+          <br />
+
+          <div class="hbrown">
+            <strong id="t-color-grn"> Wireless: </strong>
+          </div>
+          <div class="gear-section">
+            10 channels of <span>
+              <strong
+                ><a class="hblue" href="https://www.sounddevices.com/astral/">
+                  Sound Devices Astral</a
+                ></strong
+              >
+            </span> wireless available including...
+
+            <br />
+            Sound Devices A20 Nexus - 8 - 16 channel Receiver
+            <br />
+            3 x Audio Ltd. A10 Receivers
+            <br />
+            <br />
+            2 x Sound Devices A20 transmitters with timecode, internal recording
+            and Phantom Power
+            <br />
+            4 x Sound Devices A20 mini with timecode and internal recording
+            <br />
+            4 x Audio ltd A10 transmitters with timecode and internal recording
+            <br />
+
+            <br />
+          </div>
+
+          <div class="hbrown">
+            <strong id="t-color-ylw"> Microphones </strong>
+          </div>
+
+          <div class="gear-section">
+            Sanken Cs3e shotgun for exterior location
+            <br />
+            DPA 2017 shotgun microphone
+            <br />
+            2 x Sennheiser 8050 hypercardiod mics for indoor recording
+            <br />
+            2 x Rode Nt-5 pencil mics for stereo Atmos recording Rode NtG 3 Shotgun
+            <br />
+            6 x DPA 4060's
+            <br />
+            4 x DPA 6060's
+            <br />
+            3 x Shure SM7B Podcast mic's
+            <br />
+            1 x custom 'Neuman U87' clone large diaphram condensor
+          </div>
+
+          <br />
+          <div class="hbrown">
+            <strong id="tc-brown"> Coms/IFB </strong>
+          </div>
+
+          <div class="gear-section">
+            10 IFB receivers for client monitoring
+            <br />
+            2 x sennheiser G3 kits for camera/ IFB feeds
+            <br />
+            Large battery operated playback speaker
+            <br />
+          </div>
+        </div>
+      </div>
+      <script is:inline>
+        document.addEventListener("DOMContentLoaded", () => {
+          const slider = document.getElementById("slider");
+          const navLinks = document.querySelectorAll(".slider-nav a");
+          const slides = document.querySelectorAll(".slider .gear-image");
+
+          if (!slider || slides.length === 0 || navLinks.length === 0) return;
+
+          // Set the first slide as active by default
+          slides.forEach((slide, i) =>
+            slide.classList.toggle("active", i === 0),
+          );
+          navLinks.forEach((link, i) =>
+            link.classList.toggle("active", i === 0),
+          );
+
+          function setActiveSlide(index) {
+            slides.forEach((slide, i) =>
+              slide.classList.toggle("active", i === index),
+            );
+            navLinks.forEach((link, i) =>
+              link.classList.toggle("active", i === index),
+            );
+          }
+
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault();
+              const slideIndex = parseInt(
+                this.getAttribute("data-slide") || "0",
+                10,
+              );
+              const slideWidth = slider.clientWidth;
+              slider.scrollTo({
+                left: slideWidth * slideIndex,
+                behavior: "smooth",
+              });
+              setActiveSlide(slideIndex);
+            });
+          });
+
+          slider.addEventListener("scroll", function () {
+            const scrollPosition = slider.scrollLeft;
+            const slideWidth = slider.clientWidth;
+            const activeIndex = Math.round(scrollPosition / slideWidth);
+            setActiveSlide(activeIndex);
+          });
+        });
+      </script>
+      <Footer />
+    </div>
+  </body>
+</html>

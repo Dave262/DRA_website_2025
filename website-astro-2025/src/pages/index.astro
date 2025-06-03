@@ -1,11 +1,436 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+// import "../../public/style.css";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from "./header.astro";
+import Footer from "./footer.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <link rel="stylesheet" href="style.css" />
+  <Header />
+  <body>
+    <div class="wrap">
+      <div class="nav">
+        <div class="van-container">
+          <div class="stars-svg"></div>
+          <div>
+            <img id="power-pole" src="/images/svg/pole.svg" alt="" />
+            <div class="van-svg">
+              <img src="/images/svg/van-solid.svg" alt="white van" />
+            </div>
+          </div>
+
+          <div class="van-wheels">
+            <img id="animation-wheel-1" src="/images/svg/wheel.svg" alt="" />
+            <img id="animation-wheel-2" src="/images/svg/wheel.svg" alt="" />
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a class="hgreen" style="color:#99cb9b">/home</a>
+          <a class="horange" href="./gear.html" id="wiggle">/kit list</a>
+          <a class="hred" href="./contact.html" id="wiggle">/contact</a>
+          <a class="hblue" href="./blog.html" id="wiggle">/blog</a>
+        </div>
+      </div>
+
+      <!-- MAIN Section -->
+      <div class="home-content">
+        <div class="text-content">
+          <div class="title">
+            <span id="t-color-red"> David </span>
+            <span id="t-color-org"> Ross </span>
+            <span id="t-color-ylw"> :: </span>
+            <span id="t-color-grn"> Audio<span id="t-color-ylw">;</span> </span>
+            <div class="h3">Production Sound Mixer & Audio Engineer</div>
+            <div class="h3">
+              <span>Melbourne, Australia</span>
+            </div>
+          </div>
+
+          <div>
+            <br />
+            <p><strong>Hello! ~ </strong> My name is <strong>David</strong>.</p>
+          </div>
+          <p>
+            I'm a Melbourne-based Sound Recordist, Designer and lover of all
+            things audio. Available for TV, documentary, commercial and
+            corporate bookings.
+          </p>
+          <p class="spaced">
+            To get in touch, you can send an e-mail to:
+            <a href="mailto:davidrossaudio@gmail.com" id="email-link"
+              ><b>davidrossaudio@gmail.com</b></a
+            >
+          </p>
+          <br />
+          <p>Or... check out my instagram or IMDB page</p>
+          <br />
+
+          <div>
+            <span>
+              <a href=" https://www.instagram.com/davidrossss/">
+                <svg
+                  class="lucide"
+                  id="wiggle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="0.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <title>Instagram link</title>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+
+              <a href="https://www.imdb.com/name/nm7017410/">
+                <svg
+                  class="lucide"
+                  id="wiggle"
+                  fill="none"
+                  width="35px"
+                  viewBox="0 0 24 24"
+                  role="button"
+                  stroke-width="0.4"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>IMDb link</title>
+                  <path
+                    d="M22.3781 0H1.6218C.7411.0583.0587.7437.0018 1.5953l-.001 20.783c.0585.8761.7125 1.543 1.5559 1.6191A.337.337 0 0 0 1.6016 
+                                  24h20.7971a.4579.4579 0 0 0 .0437-.002c.8727-.0768 1.5568-.8271 1.5568-1.7085V1.7098c0-.8914-.696-1.6416-1.584-1.7078A.3294.3294 0 0 0 
+                                  22.3781 0zm0 .496a1.2144 1.2144 0 0 1 1.1252 1.2139v20.5797c0 .6377-.4875 1.1602-1.1045 1.2145H1.6016c-.5967-.0543-1.0645-.5297-1.1053-1.1258V1.6284C.5371 
+                                  1.0185 1.0184.5364 1.6217.496h20.7564zM4.7954 8.2603v7.3636H2.8899V8.2603h1.9055zm6.5367 0v7.3636H9.6707v-4.9704l-.6711 4.9704H7.813l-.6986-4.8618-.0066 
+                                  4.8618h-1.668V8.2603h2.468c.0748.4476.1492.9694.2307 1.5734l.2712 1.8713.4407-3.4447h2.4817zm2.9772 1.3289c.0742.0404.122.108.1417.2034.0279.0953.0345.3118.0345.6442v2.8548c0 
+                                  .4881-.0345.7867-.0955.8954-.0609.1152-.2304.1695-.5018.1695V9.5211c.204 0 .3457.0205.4211.0681zm-.0211 6.0347c.4543 0 .8006-.0265 1.0245-.0742.2304-.0477.4204-.1357.5694-.2648.1556-.1218.2642-.298.3251-.5219.0611-.2238.1021-.6648.1021-1.3224v-2.5832c0-.6986-.0271-1.1668-.0742-1.4039-.041-.237-.1431-.4543-.3126-.6437-.1695-.1973-.4198-.3324-.7456-.421-.3191-.0808-.8542-.1285-1.7694-.1285h-1.4244v7.3636h2.3051zm5.14-1.7827c0 .3523-.0199.5762-.0544.6708-.033.0947-.1894.1424-.3046.1424-.1086 0-.19-.0477-.2238-.1351-.041-.0887-.0609-.2986-.0609-.6238v-1.9469c0-.3324.0199-.5423.0543-.6237.0338-.0808.1086-.122.2171-.122.1153 0 .2709.0412.3114.1425.041.0947.0609.2986.0609.6032v1.8926zm-2.4747-5.5809v7.3636h1.7157l.1152-.4675c.1556.1894.3251.3324.5152.4271.1828.0881.4608.1357.678.1357.3047 0 .5629-.0748.7802-.237.2165-.1562.3589-.3462.4198-.5628.0543-.2173.0887-.543.0887-.9841v-2.0675c0-.4409-.0139-.7324-.0344-.8681-.0199-.1357-.0742-.2781-.1695-.4204-.1021-.1425-.2437-.251-.4272-.3325-.1834-.0742-.3999-.1152-.6576-.1152-.2172 0-.4952.0477-.6846.1285-.1835.0887-.353.2238-.5086.4007V8.2603h-1.8309z"
+                  ></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <img
+          class="profile-pic"
+          src="/images/jpeg/david/david-03.JPG"
+          alt="Picture of David Ross holding a boom and looking stressed."
+          width="250px"
+        />
+      </div>
+
+      <div class="border"></div>
+
+      <!-- end main -->
+      <div class="h2">
+        <strong>
+          Past work and clients:
+          <br />
+          <span id="t-color-org">Feature</span>
+          <span id="t-color-org">Films</span>
+          <span id="t-color-org">and</span>
+          <span id="t-color-org">Television</span>
+          <span id="t-color-org">;</span>
+        </strong>
+      </div>
+
+      <div class="image-grid">
+        <a
+          title="Moja Vesna - 2022"
+          href="https://www.imdb.com/title/tt7298782/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_moja%2520vesna"
+        >
+          <span class="visually-hidden"
+            >Poster for Moja Vesna (Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/moja_vesna.jpg"
+            alt="Poster for 'Moja Vesna' (2022)"
+          />
+        </a>
+
+        <a
+          title="Green Light Documentary"
+          href="https://www.imdb.com/title/tt9010346/?ref_=nv_sr_srsg_1_tt_8_nm_0_in_0_q_green%2520light"
+        >
+          <span class="visually-hidden"
+            >Poster for Green Light (Feature Documentary)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/green_light.jpg"
+            alt="Poster for 'Green Light' (Documentary)"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt6333104">
+          <span class="visually-hidden"
+            >Poster for 'Hot Girls Wanted - Turned On (US TV Factual)'</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/hot_girls_wanted_turned_on.jpg"
+            alt="Poster for 'Hot Girls Wanted - Turned On'"
+          />
+        </a>
+
+        <a
+          href="https://www.imdb.com/title/tt10305444/"
+          title="Metro Sexual Season 1 and 2"
+        >
+          <span class="visually-hidden"
+            >Poster for Metro Sexual - Season 1 and 2 (TV Comedy)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/metro_sexual.jpg"
+            alt="Poster for 'Metro Sexual'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt7313218/">
+          <span class="visually-hidden"
+            >Poster for Strange Colours (Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/strange_colours.jpg"
+            alt="Poster for 'Strange Colours'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt24177240/">
+          <span class="visually-hidden"
+            >Poster for Strange Creatures (Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/strange_creatures.jpg"
+            alt="Poster for 'Strange Creatures'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt21856784/">
+          <span class="visually-hidden"
+            >Poster for The Defenders (Documentary Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/the_dfenders.jpg"
+            alt="Poster for 'The Defenders'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt14502642/">
+          <span class="visually-hidden"
+            >Poster for We Were Once Kids (Documentary Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/we_were_once_kids.jpg"
+            alt="Poster for 'We Were Once Kids'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt6009686/">
+          <span class="visually-hidden"
+            >Poster for A Birthday Party (Short Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/A_Brithday_Party.jpg"
+            alt="Poster for 'A Birthday Party'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt6186672/?ref_=mv_close">
+          <span class="visually-hidden"
+            >Poster for Aussie Gold Hunters (Factual TV Series)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/AGH_2.jpeg"
+            alt="Poster for 'Aussie Gold Hunters'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt29515719/">
+          <span class="visually-hidden"
+            >Poster for The Great Separation (Documentary Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/the_great_separation.jpg"
+            alt="Poster for 'The Great Separation'"
+          />
+        </a>
+
+        <a href="https://www.imdb.com/title/tt5722280/">
+          <span class="visually-hidden"
+            >Poster for About an Age (Feature Film)</span
+          >
+          <img
+            class="poster"
+            src="/images/jpeg/past_work/about_an_age.jpg"
+            alt="Poster for 'About an Age' (2018)"
+          />
+        </a>
+      </div>
+
+      <div class="video-wrapper">
+        <div class="video-box">
+          <iframe
+            src="https://www.youtube.com/embed/4RrS2hwvveI?si=w6Yw0Va3aVRb7FC2"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+
+      <div class="h2">
+        <strong
+          ><span id="t-color-org">Content</span>
+          <span id="t-color-org">and</span>
+          <span id="t-color-org">Campaigns</span>
+          <span id="t-color-org">;<span> </span> </span>
+
+          <div class="image-grid">
+            <img
+              class="brand-icon"
+              src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/netflix.svg"
+              alt="Netflix logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Australian_Broadcasting_Corporation_logo.svg"
+              style="width:100px"
+              alt="ABC – Australian Broadcasting Corporation logo"
+            />
+            <img
+              class="brand-icon"
+              src="images/jpeg/brands/channel_10.svg"
+              alt="Channel 10 Australia logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/apple-music-3.svg"
+              style="width:15%"
+              alt="Apple Music logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/australian-open-2.svg"
+              alt="Australian Open logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/chemist-warehouse.svg"
+              style="width:10%"
+              alt="Chemist Warehouse logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/discovery-channel-4.svg"
+              alt="Discovery Channel logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Ford_logo_flat.svg"
+              style="width:110px"
+              alt="Ford Motor Company logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/SBS_logo.svg"
+              style="width:10%"
+              alt="SBS – Special Broadcasting Service logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/schweppes-5.svg"
+              alt="Schweppes logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Seven_Network_logo.svg"
+              alt="Seven Network Australia logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Nine_Network_logo_(2008).svg"
+              alt="Nine Network Australia logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/holden.svg"
+              alt="Holden car brand logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/xero.svg"
+              alt="Xero accounting software logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/google-1-1.svg"
+              style="width:110px"
+              alt="Google logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Aussie Broadband_idJNnY2Nl5_0.svg"
+              style="width:15%"
+              alt="Aussie Broadband logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Specsavers_logo.svg"
+              style="width:120px; height:45px"
+              alt="Specsavers optical brand logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Oxfam-Logo.wine.svg"
+              style="width:80px"
+              alt="Oxfam Australia logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/anz-2.svg"
+              style="width: 15%;"
+              alt="ANZ Bank logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/CBS_Sports_(2021).svg"
+              style="width: 150px;"
+              alt="CBS Sports logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/nickelodeon-5.svg"
+              alt="Nickelodeon logo"
+            />
+            <img
+              class="brand-icon"
+              src="/images/jpeg/brands/Australia_Post.svg"
+              style="width: 120px;"
+              alt="Australia Post logo"
+            />
+          </div>
+
+          <Footer />
+        </strong>
+      </div>
+    </div>
+  </body>
+</html>

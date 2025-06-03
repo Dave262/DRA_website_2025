@@ -1,0 +1,67 @@
+---
+// import "../../style.css";
+import Layout from "../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Header from "./header.astro";
+import Footer from "./footer.astro";
+const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
+---
+
+<!doctype html>
+<link rel="stylesheet" href="style.css" />
+<html lang="en">
+  <Header />
+  <div class="wrap">
+    <div class="nav">
+      <div class="nav-icon">
+        <div class="tape-machine">
+          <a href="index.html">
+            <span class="visually-hidden"
+              >Reel-to-reel tape machine logo linking to home</span
+            >
+            <img
+              src="/images/svg/R2R_body.svg"
+              alt="reel to reel body"
+              class="tape-body"
+            />
+            <img
+              src="/images/svg/R2R_Reel.svg"
+              alt="left reel"
+              class="tape-reel reel-left"
+            />
+            <img
+              src="/images/svg/R2R_Reel.svg"
+              alt="right reel"
+              class="tape-reel reel-right"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a class="hgreen" href="./index.html" id="wiggle">/home</a>
+        <a class="horange" href="./gear.html" id="wiggle">/kit list</a>
+        <a class="hred" href="./contact.html" id="wiggle">/contact</a>
+        <a class="hblue" href="./blog.html" style="color: #5f99f6;" id="wiggle"
+          >/blog</a
+        >
+      </div>
+    </div>
+    <body>
+      <div>
+        {
+          allBlogArticles.map((article) => (
+            <div class="blog-card">
+              <h2>{article.data.title}</h2>
+              <p>By {article.data.author}</p>
+              <a href={`/blog/${article.slug}`}>Read more</a>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- <ul>
+        <li><a href="/src/pages/blog/post.md">Post 1</a></li>
+      </ul> -->
+    </body><Footer />
+  </div>
+</html>
