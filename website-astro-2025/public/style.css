@@ -295,102 +295,6 @@ textarea {
   transition: all ease 1s; */
 }
 
-.van-container {
-  position: relative;
-  top: 0;
-  overflow: hidden;
-  display: block;
-  align-items: center;
-  /* More consistent than baseline */
-  margin-bottom: 0;
-  max-width: 60%;
-  width: 100%;
-  height: 100px;
-  /* Set a consistent height */
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.van-svg {
-  position: relative;
-  left: 133px;
-  bottom: -45px;
-}
-
-.stars-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  /* or larger */
-  height: 100%;
-  background: url("/images/svg/stars.svg") repeat-x;
-  animation: stars-slide 30s linear infinite;
-}
-
-@keyframes stars-slide {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.van-wheels {
-  position: absolute;
-  bottom: -5px;
-  /* or whatever value aligns it */
-}
-
-.van-icon {
-  max-width: 100%;
-}
-
-#power-pole {
-  position: absolute;
-  height: 90px;
-  left: 100%;
-  /* start offscreen to the right */
-  bottom: 5px;
-  animation: slide-left 6s linear infinite;
-}
-
-@keyframes slide-left {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-600px);
-  }
-}
-
-#animation-wheel-1 {
-  position: relative;
-  left: 137px;
-  animation: spin 1.5s linear infinite;
-  transform-origin: center;
-}
-
-#animation-wheel-2 {
-  position: relative;
-  left: 178px;
-  animation: spin 1.5s linear infinite;
-  transform-origin: center;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .gear-section {
   padding-left: 20px;
 }
@@ -502,20 +406,23 @@ a:link {
   width: 20px;
 }
 
-.icons>a>img {
+.icons > a > img {
   max-width: 3em;
 }
 
-#wiggle:hover>.filter-brown {
-  filter: brightness(0) saturate(100%) invert(49%) sepia(81%) saturate(350%) hue-rotate(332deg) brightness(83%) contrast(90%);
+#wiggle:hover > .filter-brown {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(81%) saturate(350%)
+    hue-rotate(332deg) brightness(83%) contrast(90%);
 }
 
-#wiggle:hover>.filter-lila {
-  filter: brightness(0) saturate(100%) invert(90%) sepia(83%) saturate(5521%) hue-rotate(209deg) brightness(84%) contrast(84%);
+#wiggle:hover > .filter-lila {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(83%) saturate(5521%)
+    hue-rotate(209deg) brightness(84%) contrast(84%);
 }
 
-#wiggle:hover>.filter-yellow {
-  filter: brightness(0) saturate(100%) invert(98%) sepia(40%) saturate(2156%) hue-rotate(325deg) brightness(92%) contrast(97%);
+#wiggle:hover > .filter-yellow {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(40%) saturate(2156%)
+    hue-rotate(325deg) brightness(92%) contrast(97%);
 }
 
 .hblue:hover {
@@ -701,56 +608,5 @@ a:link {
 
   100% {
     transform: translate(0em, 0em) rotateZ(2deg);
-  }
-}
-
-/* TAPE MACHINE */
-
-.tape-machine {
-  display: inline-block;
-  position: relative;
-  width: 90px;
-  height: auto;
-  text-decoration: none;
-  line-height: 0;
-  margin: 0px 0px 2px 30px;
-}
-
-.tape-body {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.tape-reel {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  animation: spin 4s linear infinite;
-}
-
-.tape-reel:hover {
-  animation: spin 1s linear infinite;
-}
-
-/* Position the reels — tweak these based on your actual SVG layout */
-.reel-left {
-  top: -15px;
-  left: -20px;
-}
-
-.reel-right {
-  top: -15px;
-  right: -20px;
-}
-
-/* Rotation animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
   }
 }

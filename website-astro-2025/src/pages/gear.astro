@@ -8,43 +8,9 @@ import Footer from "./footer.astro";
 <!doctype html>
 <html lang="en">
   <link rel="stylesheet" href="style.css" />
-  <Header />
-
+  <Header currentPage="gear" showTapeMachine={true} />
   <body>
     <div class="wrap">
-      <div class="nav">
-        <div class="nav-icon">
-          <div class="tape-machine">
-            <a href="index.html">
-              <span class="visually-hidden"
-                >Reel-to-reel tape machine logo linking to home</span
-              >
-              <img
-                src="/images/svg/R2R_body.svg"
-                alt="reel to reel body"
-                class="tape-body"
-              />
-              <img
-                src="/images/svg/R2R_Reel.svg"
-                alt="left reel"
-                class="tape-reel reel-left"
-              />
-              <img
-                src="/images/svg/R2R_Reel.svg"
-                alt="right reel"
-                class="tape-reel reel-right"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="nav-links">
-          <a class="hgreen" href="./index.html" id="wiggle">/home</a>
-          <a class="horange" style="color: #f6915f;">/kit list</a>
-          <a class="hred" href="./contact.html" id="wiggle">/contact</a>
-          <a class="hblue" href="./blog.html" id="wiggle">/blog</a>
-        </div>
-      </div>
-
       <div class="gear-content">
         <section class="content-box-l">
           <div class="slider-wrapper">
@@ -230,18 +196,18 @@ import Footer from "./footer.astro";
 
           // Set the first slide as active by default
           slides.forEach((slide, i) =>
-            slide.classList.toggle("active", i === 0),
+            slide.classList.toggle("active", i === 0)
           );
           navLinks.forEach((link, i) =>
-            link.classList.toggle("active", i === 0),
+            link.classList.toggle("active", i === 0)
           );
 
           function setActiveSlide(index) {
             slides.forEach((slide, i) =>
-              slide.classList.toggle("active", i === index),
+              slide.classList.toggle("active", i === index)
             );
             navLinks.forEach((link, i) =>
-              link.classList.toggle("active", i === index),
+              link.classList.toggle("active", i === index)
             );
           }
 
@@ -250,7 +216,7 @@ import Footer from "./footer.astro";
               e.preventDefault();
               const slideIndex = parseInt(
                 this.getAttribute("data-slide") || "0",
-                10,
+                10
               );
               const slideWidth = slider.clientWidth;
               slider.scrollTo({

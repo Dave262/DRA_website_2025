@@ -1,48 +1,15 @@
 ---
-import "/style.css";
 import Header from "./header.astro";
 import Footer from "./footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-  <Header />
+  <link rel="stylesheet" href="style.css" />
+  <Header currentPage="contact" showTapeMachine={true} />
 
   <body>
     <div class="wrap">
-      <div class="nav">
-        <div class="nav-icon">
-          <div class="tape-machine">
-            <a href="index.html">
-              <span class="visually-hidden"
-                >Reel-to-reel tape machine logo linking to home</span
-              >
-              <img
-                src="/images/svg/R2R_body.svg"
-                alt="reel to reel body"
-                class="tape-body"
-              />
-              <img
-                src="/images/svg/R2R_Reel.svg"
-                alt="left reel"
-                class="tape-reel reel-left"
-              />
-              <img
-                src="/images/svg/R2R_Reel.svg"
-                alt="right reel"
-                class="tape-reel reel-right"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="nav-links">
-          <a class="hgreen" href="./index.html" id="wiggle">/home</a>
-          <a class="horange" href="./gear.html" id="wiggle">/kit list</a>
-          <a class="hred" href="" style="color: #ef787b;">/contact</a>
-          <a class="hblue" href="./blog.html" id="wiggle">/blog</a>
-        </div>
-      </div>
-
       <div class="home-content">
         <meta
           name="description"

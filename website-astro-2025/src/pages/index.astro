@@ -1,40 +1,15 @@
 ---
 // import "../../public/style.css";
 import Layout from "../layouts/Layout.astro";
-
 import Header from "./header.astro";
 import Footer from "./footer.astro";
 ---
 
 <html lang="en">
   <link rel="stylesheet" href="style.css" />
-  <Header />
+  <Header currentPage="home" showVan={true} />
   <body>
     <div class="wrap">
-      <div class="nav">
-        <div class="van-container">
-          <div class="stars-svg"></div>
-          <div>
-            <img id="power-pole" src="/images/svg/pole.svg" alt="" />
-            <div class="van-svg">
-              <img src="/images/svg/van-solid.svg" alt="white van" />
-            </div>
-          </div>
-
-          <div class="van-wheels">
-            <img id="animation-wheel-1" src="/images/svg/wheel.svg" alt="" />
-            <img id="animation-wheel-2" src="/images/svg/wheel.svg" alt="" />
-          </div>
-        </div>
-
-        <div class="nav-links">
-          <a class="hgreen" style="color:#99cb9b">/home</a>
-          <a class="horange" href="./gear.html" id="wiggle">/kit list</a>
-          <a class="hred" href="./contact.html" id="wiggle">/contact</a>
-          <a class="hblue" href="./blog.html" id="wiggle">/blog</a>
-        </div>
-      </div>
-
       <!-- MAIN Section -->
       <div class="home-content">
         <div class="text-content">

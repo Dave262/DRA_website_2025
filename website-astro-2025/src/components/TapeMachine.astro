@@ -1,0 +1,73 @@
+<div class="tape-machine">
+  <a href="index.html">
+    <span class="visually-hidden"
+      >Reel-to-reel tape machine logo linking to home</span
+    >
+    <img
+      src="/images/svg/R2R_body.svg"
+      alt="reel to reel body"
+      class="tape-body"
+    />
+    <img
+      src="/images/svg/R2R_Reel.svg"
+      alt="left reel"
+      class="tape-reel reel-left"
+    />
+    <img
+      src="/images/svg/R2R_Reel.svg"
+      alt="right reel"
+      class="tape-reel reel-right"
+    />
+  </a>
+</div>
+
+<style>
+  .tape-machine {
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: auto;
+    text-decoration: none;
+    line-height: 0;
+    margin: 20px 0px 2px 30px;
+  }
+
+  .tape-body {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .tape-reel {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    animation: spin 4s linear infinite;
+  }
+
+  .tape-reel:hover {
+    animation: spin 1s linear infinite;
+  }
+
+  /* Position the reels — tweak these based on your actual SVG layout */
+  .reel-left {
+    top: -15px;
+    left: -20px;
+  }
+
+  .reel-right {
+    top: -15px;
+    right: -20px;
+  }
+
+  /* Rotation animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../header.astro";
+import Footer from "../footer.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const allBlogArticles: CollectionEntry<"blog">[] =
+    await getCollection("blog");
+
+  return allBlogArticles.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<!doctype html>
+<link rel="stylesheet" href="/style.css" />
+<html lang="en">
+  <Header currentPage="blog" showTapeMachine={true} />
+  <div class="wrap">
+    <body>
+      <h1>{entry.data.title}</h1>
+    </body><Footer />
+  </div>
+</html>

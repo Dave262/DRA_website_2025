@@ -1,7 +1,43 @@
+---
+const { currentPage } = Astro.props;
+import TapeMachine from "../components/TapeMachine.astro";
+import Van from "../components/Van.astro";
+const { showTapeMachine, showVan } = Astro.props;
+---
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>David Ross Audio</title>
   <link rel="icon" href="/images/png/DavidRossLogo.png" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <div class="wrap">
+    <div class="nav">
+      {showTapeMachine && <TapeMachine />}
+      {showVan && <Van />}
+      <nav class="nav-links">
+        <a
+          class="hgreen"
+          href="/"
+          style={currentPage === "home" ? "color:#99cb9b" : ""}>/home</a
+        >
+        <a
+          class="horange"
+          href="/gear.html"
+          style={currentPage === "gear" ? "color:#f9b26d" : ""}>/kit list</a
+        >
+        <a
+          class="hred"
+          href="/contact.html"
+          style={currentPage === "contact" ? "color:#f96d6d" : ""}>/contact</a
+        >
+        <a
+          class="hblue"
+          href="/blog.html"
+          style={currentPage === "blog" ? "color:#5f99f6" : ""}>/blog</a
+        >
+      </nav>
+    </div>
+  </div>
 </head>
