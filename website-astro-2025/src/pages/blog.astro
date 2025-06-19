@@ -13,14 +13,43 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
   <Header currentPage="blog" showTapeMachine={true} />
   <div class="wrap">
     <body>
+      <div class="text-content">
+        This is a blog of sorts - where I'll talk about stuff I'm working on and
+        things i'm interested in.
+      </div>
+
       <div>
         {
           allBlogArticles.map((article) => (
-            <div class="blog-card">
-              <h2>{article.data.title}</h2>
-              <p>By {article.data.author}</p>
-              <a href={`/articles/${article.slug}`}>Read more</a>
-            </div>
+            <a href={`/articles/${article.slug}`}>
+              <div class="blog-card">
+                <div class="blog-card-info">
+                  <h2>{article.data.title}</h2>
+                  <p class="" id="subheading-text">
+                    By {article.data.author} on the{" "}
+                    {new Date(article.data.pubDate).toLocaleDateString(
+                      "en-GB",
+                      {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                      }
+                    )}
+                  </p>
+
+                  <div>
+                    <span class="description">{article.data.description}</span>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    class="blog-image"
+                    src={article.data.image.url}
+                    alt={article.data.image.alt}
+                  />
+                </div>
+              </div>
+            </a>
           ))
         }
       </div>
@@ -31,3 +60,10 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
     </body><Footer />
   </div>
 </html>
+
+<style>
+  .description {
+    color: var(--text-colour-grey);
+    font-size: medium;
+  }
+</style>

@@ -5,11 +5,27 @@
   --bg-color-light: #a7a7a7;
   --text-colour-dark: rgba(255, 249, 234, 0.971);
   --text-colour-grey: rgba(255, 249, 234, 0.473);
+  --text-colour-dark-grey: rgb(187, 187, 187);
   --color-orange: #f6915f;
   --box-shadow: 5px 5px 3px #111111;
   --orange-glow: 0.2em 0.2em 0.5em #f6915f;
   --border-radius: 20px;
   color-scheme: light dark;
+}
+
+blockquote {
+  border-left: 4px solid var(--color-orange);
+  background: #222;
+  color: #fff9ea;
+  padding: 1em 1.5em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+
+  font-style: italic;
+}
+p {
+  margin-bottom: 1.2em;
+  line-height: 1.7;
 }
 
 * {
@@ -38,6 +54,43 @@ body {
   line-height: 1.5;
   margin: 10px;
   overflow-y: scroll;
+}
+
+.content-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+#subheading-text {
+  color: var(--text-colour-dark-grey);
+  margin-top: 1em;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 5px;
+  padding: 10px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  align-items: center;
+}
+.blog-card:hover {
+  background-color: #484848;
+  cursor: pointer;
+}
+
+.blog-image {
+  width: 260px; /* or 100%, or any fixed value */
+  height: 150px; /* adjust as needed */
+  object-fit: cover; /* ensures the image fills the box and is cropped if needed */
+  border-radius: var(--border-radius); /* optional: rounded corners */
+
+  display: block;
 }
 
 .label {
@@ -108,16 +161,23 @@ iframe {
 
 .text-content {
   flex: 1;
+  margin-top: 1em;
   margin-bottom: 2em;
   min-width: 250px;
 }
 
-.h2 {
+h1 {
+  margin-bottom: 0.7em;
+  margin-top: 0.7em;
+}
+
+h2 {
+  color: var(--text-colour-dark);
   margin: 20px 5px 10px 0px;
   font-size: 1.2em;
 }
 
-.h3 {
+h3 {
   font-size: 18px;
   color: var(--text-colour-grey);
 }
@@ -353,7 +413,7 @@ a,
 a:visited a:hover,
 a:active,
 a:link {
-  color: var(--text-colour-dark);
+  color: var(--color-orange);
   text-decoration: none;
   outline: 0;
 }
