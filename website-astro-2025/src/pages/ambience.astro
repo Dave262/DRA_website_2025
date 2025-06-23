@@ -1,0 +1,21 @@
+---
+// import "./style.css";
+
+import Header from "./header.astro";
+import Footer from "./footer.astro";
+import WaveSurferPlayer from "../components/WaveSurferPlayer";
+---
+
+<!doctype html>
+<link rel="stylesheet" href="style.css" />
+<Header currentPage="ambience" showTapeMachine={true} />
+<body>
+  <div class="wrap">
+    <div>This is the audio player</div>
+    <div>
+      <WaveSurferPlayer client:load />
+    </div>
+
+    <Footer />
+  </div>
+</body>

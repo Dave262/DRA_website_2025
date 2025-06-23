@@ -4,7 +4,7 @@ import Header from "../header.astro";
 import Footer from "../footer.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { getEntry, render } from "astro:content";
+import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const allBlogArticles: CollectionEntry<"blog">[] =
@@ -30,9 +30,9 @@ const { Content } = await render(entry);
     <body>
       <h1 id="">{entry.data.title}</h1>
 
-      <div>
+      <!-- <div>
         {entry.data.tags.map((tag) => <span class="tag-pill">{tag}</span>)}
-      </div>
+      </div> -->
       <p id="subheading-text">
         By {entry.data.author} on the{" "}
         {

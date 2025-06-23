@@ -23,6 +23,7 @@ blockquote {
 
   font-style: italic;
 }
+
 p {
   margin-bottom: 1.2em;
   line-height: 1.7;
@@ -79,16 +80,21 @@ body {
   box-shadow: var(--box-shadow);
   align-items: center;
 }
+
 .blog-card:hover {
   background-color: #484848;
   cursor: pointer;
 }
 
 .blog-image {
-  width: 260px; /* or 100%, or any fixed value */
-  height: 150px; /* adjust as needed */
-  object-fit: cover; /* ensures the image fills the box and is cropped if needed */
-  border-radius: var(--border-radius); /* optional: rounded corners */
+  width: 260px;
+  /* or 100%, or any fixed value */
+  height: 150px;
+  /* adjust as needed */
+  object-fit: cover;
+  /* ensures the image fills the box and is cropped if needed */
+  border-radius: var(--border-radius);
+  /* optional: rounded corners */
 
   display: block;
 }
@@ -161,6 +167,7 @@ iframe {
 
 .text-content {
   flex: 1;
+  font-size: 1.2em;
   margin-top: 1em;
   margin-bottom: 2em;
   min-width: 250px;
@@ -177,8 +184,8 @@ h2 {
   font-size: 1.2em;
 }
 
-h3 {
-  font-size: 18px;
+.h3 {
+  font-size: 0.7em;
   color: var(--text-colour-grey);
 }
 
@@ -466,23 +473,20 @@ a:link {
   width: 20px;
 }
 
-.icons > a > img {
+.icons>a>img {
   max-width: 3em;
 }
 
-#wiggle:hover > .filter-brown {
-  filter: brightness(0) saturate(100%) invert(49%) sepia(81%) saturate(350%)
-    hue-rotate(332deg) brightness(83%) contrast(90%);
+#wiggle:hover>.filter-brown {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(81%) saturate(350%) hue-rotate(332deg) brightness(83%) contrast(90%);
 }
 
-#wiggle:hover > .filter-lila {
-  filter: brightness(0) saturate(100%) invert(90%) sepia(83%) saturate(5521%)
-    hue-rotate(209deg) brightness(84%) contrast(84%);
+#wiggle:hover>.filter-lila {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(83%) saturate(5521%) hue-rotate(209deg) brightness(84%) contrast(84%);
 }
 
-#wiggle:hover > .filter-yellow {
-  filter: brightness(0) saturate(100%) invert(98%) sepia(40%) saturate(2156%)
-    hue-rotate(325deg) brightness(92%) contrast(97%);
+#wiggle:hover>.filter-yellow {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(40%) saturate(2156%) hue-rotate(325deg) brightness(92%) contrast(97%);
 }
 
 .hblue:hover {
