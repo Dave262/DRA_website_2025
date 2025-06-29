@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 #Audio folder
 public/audio
+.DS_Store
