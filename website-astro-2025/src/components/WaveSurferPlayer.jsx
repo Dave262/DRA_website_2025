@@ -11,7 +11,8 @@ const WaveSurferPlayer = () => {
 
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
     container: containerRef,
-    height: 100,
+    height: 40,
+    splitChannels: true,
     waveColor: "rgb(200, 0, 200)",
     progressColor: "rgb(100, 0, 100)",
     url: "/audio/test_audio.wav",
