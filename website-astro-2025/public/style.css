@@ -25,8 +25,8 @@ blockquote {
 }
 
 p {
-  margin-bottom: 1.2em;
-  line-height: 1.7;
+  margin-bottom: 1em;
+  line-height: 1.2;
 }
 
 * {
@@ -73,12 +73,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 10px 5px;
+  /* margin: 10px 5px; */
   padding: 10px;
-  background-color: #1a1a1a;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
+  /* background-color: #1a1a1a; */
+  border-radius: 2px;
+  /* box-shadow: var(--box-shadow); */
   align-items: center;
+  border-bottom: 1px solid var(--text-colour-dark);
 }
 
 .blog-card:hover {
@@ -87,7 +88,7 @@ body {
 }
 
 .blog-image {
-  width: 260px;
+  width: 300px;
   /* or 100%, or any fixed value */
   height: 150px;
   /* adjust as needed */
@@ -473,20 +474,23 @@ a:link {
   width: 20px;
 }
 
-.icons>a>img {
+.icons > a > img {
   max-width: 3em;
 }
 
-#wiggle:hover>.filter-brown {
-  filter: brightness(0) saturate(100%) invert(49%) sepia(81%) saturate(350%) hue-rotate(332deg) brightness(83%) contrast(90%);
+#wiggle:hover > .filter-brown {
+  filter: brightness(0) saturate(100%) invert(49%) sepia(81%) saturate(350%)
+    hue-rotate(332deg) brightness(83%) contrast(90%);
 }
 
-#wiggle:hover>.filter-lila {
-  filter: brightness(0) saturate(100%) invert(90%) sepia(83%) saturate(5521%) hue-rotate(209deg) brightness(84%) contrast(84%);
+#wiggle:hover > .filter-lila {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(83%) saturate(5521%)
+    hue-rotate(209deg) brightness(84%) contrast(84%);
 }
 
-#wiggle:hover>.filter-yellow {
-  filter: brightness(0) saturate(100%) invert(98%) sepia(40%) saturate(2156%) hue-rotate(325deg) brightness(92%) contrast(97%);
+#wiggle:hover > .filter-yellow {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(40%) saturate(2156%)
+    hue-rotate(325deg) brightness(92%) contrast(97%);
 }
 
 .hblue:hover {

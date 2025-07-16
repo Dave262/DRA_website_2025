@@ -47,12 +47,13 @@ const { showTapeMachine, showVan } = Astro.props;
         <div class="dropdown">
           <a
             class="hblue dropbtn"
-            style={currentPage === "blog" ? "color:#5f99f6" : ""}>/stuff i do</a
+            style={currentPage === "blog" ? "color:#5f99f6" : ""}
+            >/other stuff</a
           >
           <div class="dropdown-content">
             <a href="/blog.html">blog</a>
-            <a href="/ambience.html">ambience recordings</a>
-            <a href="/blog/project3">other cool things</a>
+            <!-- <a href="/ambience.html">ambience recordings</a> -->
+            <!-- <a href="/blog/project3">other cool things</a> -->
           </div>
         </div>
       </nav>
@@ -64,7 +65,7 @@ const { showTapeMachine, showVan } = Astro.props;
   .dropdown {
     position: relative;
     display: inline-block;
-    border-radius: var(--border-radius);
+    border-radius: 5px;
   }
   .dropbtn {
     cursor: pointer;
@@ -87,10 +88,10 @@ const { showTapeMachine, showVan } = Astro.props;
   }
   .dropdown-content a:hover {
     background-color: #444;
-    border-radius: var(--border-radius);
+    border-radius: 5px;
   }
   .dropdown:hover .dropdown-content {
     display: block;
-    border-radius: var(--border-radius);
+    border-radius: 5px;
   }
 </style>
