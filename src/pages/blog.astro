@@ -16,8 +16,10 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
       <div class="text-content">
         <br />
         Every now and then I have thoughts about something - I try and write them
-        down here.
+        down here. Mostly tech related tutorials and ponderings.
       </div>
+
+      <div class="plain-border"></div>
 
       <div>
         {
@@ -25,8 +27,8 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
             <a href={`/articles/${article.slug}`}>
               <div class="blog-card">
                 <div class="blog-card-info">
-                  <h2>{article.data.title}</h2>
-                  <p class="" id="subheading-text">
+                  <h2 id="t-color-ylw">{article.data.title}</h2>
+                  <p style="color: var(--text-colour-dark-grey)" >
                     By {article.data.author} on the{" "}
                     {new Date(article.data.pubDate).toLocaleDateString(
                       "en-GB",
@@ -34,7 +36,7 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
                         day: "2-digit",
                         month: "short",
                         year: "numeric",
-                      }
+                      },
                     )}
                   </p>
 
@@ -49,8 +51,10 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
                     alt={article.data.image.alt}
                   />
                 </div>
+              
               </div>
             </a>
+              <div class="plain-border" />
           ))
         }
       </div>
@@ -66,5 +70,11 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
   .description {
     color: var(--text-colour-grey);
     font-size: medium;
+  }
+
+  .plain-border {
+    border-bottom: 1px solid rgb(206, 206, 206);
+    margin-bottom: 0.1em;
+    margin-top: 0em;
   }
 </style>

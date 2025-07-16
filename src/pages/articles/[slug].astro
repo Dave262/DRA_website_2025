@@ -26,19 +26,19 @@ const { Content } = await render(entry);
 <link rel="stylesheet" href="/style.css" />
 <html lang="en">
   <Header currentPage="blog" showTapeMachine={true} />
-  <div class="wrap">
+  <div class="blog-wrap">
     <body>
-      <h1 id="">{entry.data.title}</h1>
-
-      <!-- <div>
+      <h1 class="title" id="">{entry.data.title}</h1>
+      <!-- 
+      <div>
         {entry.data.tags.map((tag) => <span class="tag-pill">{tag}</span>)}
       </div> -->
       <p id="subheading-text">
         By {entry.data.author} on the{" "}
         {
           new Date(entry.data.pubDate).toLocaleDateString("en-GB", {
-            hour: "2-digit",
-            minute: "2-digit",
+            // hour: "2-digit",
+            // minute: "2-digit",
             day: "2-digit",
             month: "short",
             year: "numeric",
@@ -49,11 +49,16 @@ const { Content } = await render(entry);
 
       <div class="text-content">
         <Content />
-      </div><Footer />
+      </div>
+      <Footer />
     </body>
   </div>
 
   <style>
+    .title {
+      color: #dd6656;
+    }
+
     .tag-pill {
       display: inline-block;
       background: #311e5b;
@@ -70,12 +75,17 @@ const { Content } = await render(entry);
 
     .plain-border {
       border-bottom: 2px solid rgb(206, 206, 206);
-      margin-bottom: 1.5em;
+      margin-bottom: 0.1em;
       margin-top: 0em;
     }
 
     .break {
       margin-bottom: 50px;
+    }
+
+    #subheading-text {
+      color: var(--text-colour-dark-grey);
+      margin-top: 0.2em;
     }
   </style>
 </html>

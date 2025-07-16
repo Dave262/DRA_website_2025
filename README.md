@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# David Ross's Website - Built with Astro.
 
 ```sh
 npm create astro@latest -- --template basics
