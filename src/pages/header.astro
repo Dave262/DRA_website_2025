@@ -2,14 +2,6 @@
 const { currentPage } = Astro.props;
 import TapeMachine from "../components/TapeMachine.astro";
 import Van from "../components/Van.astro";
-import {
-    Astronav,
-    MenuItems,
-    MenuIcon,
-    Dropdown,
-    DropdownItems,
-    DropdownSubmenu,
-} from "astro-navbar";
 const { showTapeMachine, showVan } = Astro.props;
 ---
 
@@ -40,67 +32,20 @@ const { showTapeMachine, showVan } = Astro.props;
                     >/kit list</a
                 >
                 <a
+                    class="hblue"
+                    id="wiggle"
+                    href="/blog.html"
+                    style={currentPage === "blog" ? "color:#5f99f6" : ""}
+                    >/blog</a
+                >
+                <a
                     class="hred"
                     id="wiggle"
                     href="/contact.html"
                     style={currentPage === "contact" ? "color:#f96d6d" : ""}
                     >/contact</a
                 >
-
-                <a
-                    class="hblue"
-                    id="wiggle"
-                    href="/blog.html"
-                    style={currentPage === "blog" ? "color:#5f99f6" : ""}
-                    >/Blog</a
-                >
-
-                <!-- <div class="dropdown">
-                    <a
-                        class="hblue dropbtn"
-                        style={currentPage === "blog" ? "color:#5f99f6" : ""}
-                        >/other stuff</a
-                    >
-                    <div class="dropdown-content">
-                        <a href="/blog.html">blog</a>
-                        <!-- <a href="/ambience.html">ambience recordings</a> -->
-                <!-- <a href="/blog/project3">other cool things</a> -->
             </nav>
         </div>
     </div>
 </head>
-
-<style>
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        border-radius: 5px;
-    }
-    .dropbtn {
-        cursor: pointer;
-    }
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #000000;
-        min-width: 160px;
-
-        box-shadow: var(--box-shadow);
-
-        z-index: 1;
-    }
-    .dropdown-content a {
-        color: #fff;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-    .dropdown-content a:hover {
-        background-color: #444;
-        border-radius: 5px;
-    }
-    .dropdown:hover .dropdown-content {
-        display: block;
-        border-radius: 5px;
-    }
-</style>

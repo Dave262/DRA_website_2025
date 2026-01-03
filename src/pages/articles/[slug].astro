@@ -1,5 +1,4 @@
 ---
-import Layout from "../../layouts/Layout.astro";
 import Header from "../header.astro";
 import Footer from "../footer.astro";
 import { getCollection } from "astro:content";
@@ -7,15 +6,15 @@ import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
-  const allBlogArticles: CollectionEntry<"blog">[] =
-    await getCollection("blog");
+    const allBlogArticles: CollectionEntry<"blog">[] =
+        await getCollection("blog");
 
-  return allBlogArticles.map((entry) => ({
-    params: {
-      slug: entry.slug,
-    },
-    props: { entry },
-  }));
+    return allBlogArticles.map((entry) => ({
+        params: {
+            slug: entry.slug,
+        },
+        props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
@@ -25,67 +24,67 @@ const { Content } = await render(entry);
 <!doctype html>
 <link rel="stylesheet" href="/style.css" />
 <html lang="en">
-  <Header currentPage="blog" showTapeMachine={true} />
-  <div class="blog-wrap">
-    <body>
-      <h1 class="title" id="">{entry.data.title}</h1>
-      <!-- 
+    <Header currentPage="blog" showTapeMachine={true} />
+    <div class="blog-wrap">
+        <body>
+            <h1 class="title" id="">{entry.data.title}</h1>
+            <!--
       <div>
         {entry.data.tags.map((tag) => <span class="tag-pill">{tag}</span>)}
       </div> -->
-      <p id="subheading-text">
-        By {entry.data.author} on the{" "}
-        {
-          new Date(entry.data.pubDate).toLocaleDateString("en-GB", {
-            // hour: "2-digit",
-            // minute: "2-digit",
-            day: "2-digit",
-            month: "short",
-            year: "numeric",
-          })
+            <p id="subheading-text">
+                {entry.data.author} - {" "}
+                {
+                    new Date(entry.data.pubDate).toLocaleDateString("en-GB", {
+                        // hour: "2-digit",
+                        // minute: "2-digit",
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                    })
+                }
+            </p>
+            <div class="plain-border"></div>
+
+            <div class="text-content">
+                <Content />
+            </div>
+            <Footer />
+        </body>
+    </div>
+
+    <style>
+        .title {
+            color: var(--text-colour-dark-grey);
         }
-      </p>
-      <div class="plain-border"></div>
 
-      <div class="text-content">
-        <Content />
-      </div>
-      <Footer />
-    </body>
-  </div>
+        .tag-pill {
+            display: inline-block;
+            background: #311e5b;
+            color: #ffffff;
+            padding: 0.2em 0.9em;
+            border-radius: 999px;
+            font-size: 0.75em;
+            margin: 0 0.3em 0.3em 0;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            vertical-align: middle;
+        }
 
-  <style>
-    .title {
-      color: #dd6656;
-    }
+        .plain-border {
+            border-bottom: 2px solid rgb(206, 206, 206);
+            margin-bottom: 0.1em;
+            margin-top: 0em;
+        }
 
-    .tag-pill {
-      display: inline-block;
-      background: #311e5b;
-      color: #ffffff;
-      padding: 0.2em 0.9em;
-      border-radius: 999px;
-      font-size: 0.75em;
-      margin: 0 0.3em 0.3em 0;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      vertical-align: middle;
-    }
+        .break {
+            margin-bottom: 50px;
+        }
 
-    .plain-border {
-      border-bottom: 2px solid rgb(206, 206, 206);
-      margin-bottom: 0.1em;
-      margin-top: 0em;
-    }
-
-    .break {
-      margin-bottom: 50px;
-    }
-
-    #subheading-text {
-      color: var(--text-colour-dark-grey);
-      margin-top: 0.2em;
-    }
-  </style>
+        #subheading-text {
+            color: var(--text-colour-dark-grey);
+            margin-top: 0.2em;
+        }
+    </style>
 </html>
