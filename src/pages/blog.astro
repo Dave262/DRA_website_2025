@@ -12,12 +12,19 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
     <Header currentPage="blog" showTapeMachine={true} />
     <div class="wrap">
         <body>
+            <div class="spacer-short"></div>
             <div class="text-content">
-                <br />
-                Trying out this blog thing...
+                Trying out this blog thing. Don't expect me to only write about
+                audio
             </div>
 
             <div class="plain-border"></div>
+            <div class="spacer-short"></div>
+            Hmm... There's nothing here...
+            <div class="spacer-long"></div>
+            <div class="spacer-long"></div>
+            <div class="spacer-long"></div>
+            <div class="spacer-long"></div>
 
             <div>
                 {
@@ -25,8 +32,10 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
                         <a href={`/articles/${article.slug}`}>
                             <div class="blog-card">
                                 <div class="blog-card-info">
-                                    <h4 id="gray">{article.data.title}</h4>
-                                    <p style="color: var(--text-colour-dark-grey)">
+                                    <h4 style="color: var(--text-white);">
+                                        {article.data.title}
+                                    </h4>
+                                    <p style="color: var(--text-grey-dark)">
                                         {new Date(
                                             article.data.pubDate,
                                         ).toLocaleDateString("en-GB", {
@@ -64,7 +73,7 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
 
 <style>
     .description {
-        color: var(--text-colour-grey);
+        color: var(--text-grey);
         font-size: medium;
     }
 
