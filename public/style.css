@@ -7,7 +7,9 @@
     --text-colour-grey: rgba(255, 249, 234, 0.473);
     --text-colour-dark-grey: rgb(187, 187, 187);
     --color-orange: #f6915f;
+    --color-blue: #6ccaca;
     --box-shadow: 5px 5px 3px #111111;
+    --box-shadow-inward: 3px 3px 10px #111111;
     --orange-glow: 0.2em 0.2em 0.5em #f6915f;
     --border-radius: 20px;
     color-scheme: light dark;
@@ -121,6 +123,7 @@ iframe {
     display: flex;
     justify-content: center;
     padding: 1rem;
+    gap: 1em;
 }
 
 .video-box {
@@ -240,17 +243,22 @@ button {
     border-radius: 10px;
     border: 1px solid var(--text-colour-dark);
     font-size: 18px;
+    font-weight: 700;
     width: 130px;
     height: 50px;
     margin: 10px;
-    background-color: #265555;
+    color: var(--background-color);
+    background-color: var(--color-blue);
     box-shadow: var(--box-shadow);
+    transition: all 0.2s ease;
 }
 
 .button:hover {
-    background-color: var(--color-orange);
-    color: var(--background-color);
+    background-color: var(--background-color-darker);
+    color: var(--text-colour-dark);
     border: 1px solid var(--text-colour-dark);
+    box-shadow: var(--box-shadow);
+    box-shadow: inset var(--box-shadow-inward);
 }
 
 form {
