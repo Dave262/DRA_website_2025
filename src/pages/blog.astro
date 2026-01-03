@@ -10,71 +10,68 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
 <!doctype html>
 <link rel="stylesheet" href="style.css" />
 <html lang="en">
-  <Header currentPage="blog" showTapeMachine={true} />
-  <div class="wrap">
-    <body>
-      <div class="text-content">
-        <br />
-        Every now and then I have thoughts about something - I try and write them
-        down here. Mostly tech related tutorials and ponderings.
-      </div>
+    <Header currentPage="blog" showTapeMachine={true} />
+    <div class="wrap">
+        <body>
+            <div class="text-content">
+                <br />
+                Trying out this blog thing...
+            </div>
 
-      <div class="plain-border"></div>
+            <div class="plain-border"></div>
 
-      <div>
-        {
-          allBlogArticles.map((article) => (
-            <a href={`/articles/${article.slug}`}>
-              <div class="blog-card">
-                <div class="blog-card-info">
-                  <h2 id="t-color-ylw">{article.data.title}</h2>
-                  <p style="color: var(--text-colour-dark-grey)" >
-                    By {article.data.author} on the{" "}
-                    {new Date(article.data.pubDate).toLocaleDateString(
-                      "en-GB",
-                      {
-                        day: "2-digit",
-                        month: "short",
-                        year: "numeric",
-                      },
-                    )}
-                  </p>
+            <div>
+                {
+                    allBlogArticles.map((article) => (
+                        <a href={`/articles/${article.slug}`}>
+                            <div class="blog-card">
+                                <div class="blog-card-info">
+                                    <h4 id="gray">{article.data.title}</h4>
+                                    <p style="color: var(--text-colour-dark-grey)">
+                                        {new Date(
+                                            article.data.pubDate,
+                                        ).toLocaleDateString("en-GB", {
+                                            day: "2-digit",
+                                            month: "short",
+                                            year: "numeric",
+                                        })}
+                                    </p>
 
-                  <div>
-                    <span class="description">{article.data.description}</span>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    class="blog-image"
-                    src={article.data.image.url}
-                    alt={article.data.image.alt}
-                  />
-                </div>
-              
-              </div>
-            </a>
-              <div class="plain-border" />
-          ))
-        }
-      </div>
+                                    <div>
+                                        <span class="description">
+                                            {article.data.description}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img
+                                        class="blog-image"
+                                        src={article.data.image.url}
+                                        alt={article.data.image.alt}
+                                    />
+                                </div>
+                            </div>
+                        </a>
+                    ))
+                }
+            </div>
 
-      <!-- <ul>
+            <!-- <ul>
         <li><a href="/src/pages/blog/post.md">Post 1</a></li>
       </ul> -->
-    </body><Footer />
-  </div>
+        </body><Footer />
+    </div>
 </html>
 
 <style>
-  .description {
-    color: var(--text-colour-grey);
-    font-size: medium;
-  }
+    .description {
+        color: var(--text-colour-grey);
+        font-size: medium;
+    }
 
-  .plain-border {
-    border-bottom: 1px solid rgb(206, 206, 206);
-    margin-bottom: 0.1em;
-    margin-top: 0em;
-  }
+    .plain-border {
+        border-bottom: 1px solid rgb(206, 206, 206);
+        margin-bottom: 0.1em;
+        margin-top: 0em;
+    }
 </style>
