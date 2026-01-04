@@ -168,6 +168,14 @@ iframe {
     border: none;
 }
 
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    gap: 15px;
+}
+
 .blog-wrap {
     display: flex;
     flex-direction: column;
@@ -186,6 +194,7 @@ iframe {
 }
 
 .text-content {
+    max-width: 70%;
     align-items: center;
     justify-content: center;
     display: inline-block;
@@ -215,9 +224,9 @@ iframe {
 .text-content {
     flex: 1;
     font-size: 1.2em;
-    margin-top: 1em;
+    /*margin-top: 1em;
     margin-bottom: 2em;
-    min-width: 250px;
+    min-width: 250px;*/
 }
 
 h1 {
@@ -395,6 +404,7 @@ textarea {
 }
 
 .profile-pic {
+    flex-shrink: 0;
     border-radius: var(--border-radius);
     margin-top: 60px;
     box-shadow: var(--box-shadow);
@@ -613,6 +623,7 @@ a:link {
     .home-content {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
 
     .image {
