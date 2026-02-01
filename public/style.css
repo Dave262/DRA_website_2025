@@ -401,8 +401,9 @@ textarea {
 .nav a {
     color: var(--text-grey-dark);
     text-decoration: none;
-    padding-left: 20px;
-    font-size: 30px;
+    padding-left: 12px;
+    font-size: 35px;
+    font-weight: 400;
     font-family: "Inclusive Sans", sans-serif;
 }
 
