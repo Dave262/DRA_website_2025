@@ -5,12 +5,13 @@ import Header from "./header.astro";
 import Footer from "./footer.astro";
 import PastWork from "./sub-pages/past-work.astro";
 import AboutMe from "./sub-pages/about-me.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
+<Layout title="Home">
     <link rel="stylesheet" href="style.css" />
-    <Header currentPage="home" showVan={true} />
     <body>
+        <Header currentPage="home" showVan={true} />
         <div class="wrap">
             <div class="border"></div>
             <AboutMe />
@@ -19,4 +20,4 @@ import AboutMe from "./sub-pages/about-me.astro";
             <Footer />
         </div>
     </body>
-</html>
+</Layout>

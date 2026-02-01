@@ -1,14 +1,12 @@
 ---
 import Header from "./header.astro";
 import Footer from "./footer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-    <link rel="stylesheet" href="/style.css" />
-    <Header currentPage="contact" showTapeMachine={true} />
-
+<Layout title="Contact">
     <body>
+        <Header currentPage="contact" showTapeMachine={true} />
         <div class="wrap">
             <div class="home-content">
                 <meta
@@ -84,4 +82,4 @@ import Footer from "./footer.astro";
             <Footer />
         </div>
     </body>
-</html>
+</Layout>

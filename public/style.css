@@ -35,6 +35,11 @@ blockquote {
     font-style: italic;
 }
 
+@font-face {
+    font-family: "Inlusive Sans";
+    src: url(https://fonts.google.com/specimen/Inclusive+Sans);
+}
+
 p {
     margin-bottom: 1em;
     line-height: 1.2;
@@ -398,6 +403,7 @@ textarea {
     text-decoration: none;
     padding-left: 20px;
     font-size: 30px;
+    font-family: "Inclusive Sans", sans-serif;
 }
 
 .profile-pic {

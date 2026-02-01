@@ -3,13 +3,12 @@
 
 import Header from "./header.astro";
 import Footer from "./footer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-    <link rel="stylesheet" href="/style.css" />
-    <Header currentPage="gear" showTapeMachine={true} />
-    <body>
+<Layout title="Gear"
+    ><body>
+        <Header currentPage="gear" showTapeMachine={true} />
         <div class="wrap">
             <div class="gear-content">
                 <section class="content-box-l">
@@ -277,5 +276,5 @@ import Footer from "./footer.astro";
             </script>
             <Footer />
         </div>
-    </body>
-</html>
+    </body></Layout
+>

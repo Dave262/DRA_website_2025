@@ -3,15 +3,14 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import Header from "./header.astro";
 import Footer from "./footer.astro";
+import Layout from "../layouts/Layout.astro";
 const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
 ---
 
-<!doctype html>
-<link rel="stylesheet" href="/style.css" />
-<html lang="en">
-    <Header currentPage="blog" showTapeMachine={true} />
-    <div class="wrap">
-        <body>
+<Layout title="Blog">
+    <body>
+        <Header currentPage="blog" showTapeMachine={true} />
+        <div class="wrap">
             <div class="spacer-short"></div>
             <div class="text-content">
                 Trying out this blog thing... there's nothing here though...be
@@ -63,13 +62,10 @@ const allBlogArticles: CollectionEntry<"blog">[] = await getCollection("blog");
                     ))
                 }
             </div>
-
-            <!-- <ul>
-        <li><a href="/src/pages/blog/post.md">Post 1</a></li>
-      </ul> -->
-        </body><Footer />
-    </div>
-</html>
+            <Footer />
+        </div>
+    </body></Layout
+>
 
 <style>
     .description {
