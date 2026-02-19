@@ -289,6 +289,7 @@ form {
 input {
     border: 1px solid var(--text-white);
     background-color: var(--bg-dark);
+    color: var(--text-white);
     border-radius: 4px;
     display: inline-block;
     margin: 10px 0px 10px 0px;
