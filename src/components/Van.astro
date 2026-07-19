@@ -1,16 +1,61 @@
+---
+// Each unique building used twice = 12 images per layer
+const REPEATS = 2;
+const buildingsDir = "/images/svg/buildings/";
+
+const buildingFiles = {
+    back: ["/images/png/building_bg.png"],
+    front: [
+        "building_1.svg",
+        "building_6.svg",
+        "building_2.svg",
+        "building_5.svg",
+        "building_3.svg",
+        "building_1.svg",
+        "building_2.svg",
+        "building_5.svg",
+    ],
+};
+
+function buildBlock(files: string[]) {
+    const result = [];
+    for (let r = 0; r < REPEATS; r++) {
+        for (const file of files) {
+            result.push(buildingsDir + file);
+        }
+    }
+    return result;
+}
+
+const backImages = buildBlock(buildingFiles.back);
+const frontImages = buildBlock(buildingFiles.front);
+---
+
 <div class="van-container">
     <div class="stars-svg"></div>
-    <div>
-        <img id="power-pole" src="/images/svg/pole.svg" alt="" />
+
+    <!-- Buildings slide as one block: grey behind, front on top -->
+    <div class="buildings-container">
+        <div class="buildings-layer buildings-back">
+            <img src="/images/png/building_bg.png" alt="" />
+        </div>
+        <div class="buildings-layer buildings-front">
+            {frontImages.map((src) => <img src={src} alt="" />)}
+        </div>
+    </div>
+
+    <div class="van-wrapper">
         <div class="van-svg">
             <img src="/images/svg/van-solid.svg" alt="white van" />
         </div>
     </div>
 
-    <div class="van-wheels">
+    <div class="van-wheels" id="van-wheels">
         <img id="animation-wheel-1" src="/images/svg/wheel.svg" alt="" />
         <img id="animation-wheel-2" src="/images/svg/wheel.svg" alt="" />
     </div>
+
+    <img id="power-pole" src="/images/svg/pole.svg" alt="" />
 </div>
 
 <style>
@@ -19,21 +64,25 @@
         top: 0;
         overflow: hidden;
         display: block;
-        align-items: center;
-        /* More consistent than baseline */
         margin-bottom: 0;
-        max-width: 60%;
+        max-width: 100%;
         width: 100%;
         height: 100px;
-        /* Set a consistent height */
         box-sizing: border-box;
         overflow: hidden;
     }
 
+    .van-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
     .van-svg {
         position: relative;
-        left: 133px;
         bottom: -45px;
+        z-index: 0;
     }
 
     .stars-svg {
@@ -41,10 +90,11 @@
         top: 0;
         left: 0;
         width: 200%;
-        /* or larger */
         height: 100%;
-        background: url("/images/svg/stars.svg") repeat-x;
-        animation: stars-slide 30s linear infinite;
+        background: url("/images/png/starry_night.png") repeat-x;
+        background-size: auto 100%;
+        animation: stars-slide 120s linear infinite;
+        pointer-events: none;
     }
 
     @keyframes stars-slide {
@@ -57,10 +107,62 @@
         }
     }
 
+    /* ---- Buildings container ----
+       Both layers move together as a single animated block.
+       The container uses flex so the front layer (in-flow) determines width.
+       The back layer is absolutely positioned to overlay behind and offset.
+    */
+    .buildings-container {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        align-items: flex-end;
+        animation: buildings-slide 35s linear infinite;
+        pointer-events: none;
+    }
+
+    .buildings-layer {
+        display: flex;
+        align-items: flex-end;
+        pointer-events: none;
+    }
+
+    .buildings-layer img {
+        height: 120px;
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    /* Front layer stays in normal flow so it sizes the container */
+    .buildings-front {
+        position: relative;
+        z-index: 2;
+        height: 60px;
+    }
+
+    /* Back layer is absolutely positioned to overlay behind, offset left */
+    .buildings-back {
+        position: absolute;
+        bottom: 0;
+        left: -15px;
+        z-index: 1;
+    }
+
+    @keyframes buildings-slide {
+        0% {
+            transform: translateX(100vw);
+        }
+        100% {
+            transform: translateX(-120%);
+        }
+    }
+
     .van-wheels {
         position: absolute;
+        left: 50%;
         bottom: -5px;
-        /* or whatever value aligns it */
+        transform: translateX(-95%);
     }
 
     .van-icon {
@@ -71,7 +173,6 @@
         position: absolute;
         height: 90px;
         left: 100%;
-        /* start offscreen to the right */
         bottom: 5px;
         animation: slide-left 6s linear infinite;
     }
@@ -88,14 +189,14 @@
 
     #animation-wheel-1 {
         position: relative;
-        left: 137px;
+        left: 0;
         animation: spin 1.5s linear infinite;
         transform-origin: center;
     }
 
     #animation-wheel-2 {
         position: relative;
-        left: 178px;
+        left: 41px;
         animation: spin 1.5s linear infinite;
         transform-origin: center;
     }

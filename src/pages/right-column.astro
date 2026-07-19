@@ -12,11 +12,11 @@ const { showTapeMachine, showVan } = Astro.props;
     <link rel="icon" href="/images/png/DavidRossLogo.png" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-    <div class="wrap">
-        <div class="nav">
-            {showTapeMachine && <TapeMachine />}
-            {showVan && <Van />}
-            <!-- <nav class="nav-links">
+    <div style="padding-left: 10%;">
+        <div class="nav-side">
+            <!-- {showTapeMachine && <TapeMachine />}
+            {showVan && <Van />} -->
+            <nav class="nav-links-side">
                 <a
                     class="hgreen"
                     id="wiggle"
@@ -45,7 +45,7 @@ const { showTapeMachine, showVan } = Astro.props;
                     style={currentPage === "contact" ? "color:var(--red)" : ""}
                     >/contact</a
                 >
-            </nav> -->
+            </nav>
         </div>
     </div>
 </head>
